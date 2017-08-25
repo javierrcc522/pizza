@@ -16,14 +16,43 @@
         <div class="col-md-6">
           <form id="pizzaForm">
             <div class="form-group">
-              <label for="sizePizza"></label>
+              <label for="sizePizza">Choose the size of your pizza:</label>
               <select id="sizePizza" class="form-group">
                 <option value="largePizza">Large Pizza</option>
                 <option value="midPizza">Medium Pizza</option>
                 <option value="smallPizza">Small Pizza</option>
               </select>
             </div>
+            <div class="form-group">
+              <fieldset>
+                <legend>Choose your Toppings:</legend>
+                  <div>
+                    <label for="cheese">Cheese</label>
+                    <input type="checkbox" id="cheese" name="toppings" value="cheese">
+                  </div>
+                  <div>
+                    <label for="ham">Ham and Pineapple</label>
+                    <input type="checkbox" id="ham" name="toppings" value="ham">
+                  </div>
+                  <div>
+                    <label for="artichoke">Artichoke</label>
+                    <input type="checkbox" id="artichoke" name="toppings" value="artichoke">
+                  </div>
+                  <div>
+                    <label for="meats">Meats</label>
+                    <input type="checkbox" id="meats" name="toppings" value="meats">
+                  </div>
+              </fieldset>
+            </div>
+            <button class="btn btn-info" type="submit">Get your pizza!!!</button>
           </form>
+        </div>
+        <div class="col-md-6">
+          <div id="showResults">
+            <p>Pizza: <span id="showPizza"></span></p>
+            <p>Ingredients: <span id="showIngre"></span></p>
+            <p>Price: <span id="showPrice"></span></p>
+          </div>
         </div>
       </div>
     </div>
