@@ -8,15 +8,16 @@
     <title>Pizza</title>
   </head>
   <div class="jumbotron">
-    <h1>Javi's Pizza Parlor</h1>
+    <h1>Lé Javi's Pizza Parlòr</h1>
   </div>
   <body><br>
     <div class="container">
+
       <div class="row">
         <div class="col-md-6">
           <form id="pizzaForm">
             <div class="form-group">
-              <label for="sizePizza">Choose the <em>size</em> of your pizza:</label>
+              <label for="sizePizza">The <em>size</em> of your pizza:</label>
               <select id="sizePizza" class="form-group">
                 <option value="Large">Large Pizza</option>
                 <option value="Medium">Medium Pizza</option>
@@ -24,14 +25,14 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="typePizza">Pick the <em>type</em> of ingredients:</label>
+              <label for="typePizza">The <em>type</em> of ingredients:</label>
               <select id="typePizza" class="form-group">
                 <option value="organic">Organic ingredients</option>
                 <option value="natural">Conventional ingredients</option>
               </select>
             </div>
             <div>
-                <h5>Choose your Toppings:</h5>
+                <h1>Choose your Toppings:</h1>
                   <input type="radio" name="toppings" value="cheese">cheese<br>
                   <input type="radio" name="toppings" value="ham">ham<br>
                   <input type="radio" name="toppings" value="artichoke">artichoke<br>
@@ -41,6 +42,7 @@
         </div>
         <div class="col-md-6">
           <div id="showResults">
+            <img src="images/pizzaman.png">
             <p>Pizza: <span id="showPizza"></span></p>
             <p>Ingredients: <span id="showIngre"></span></p>
             <p>with <span id="showToppin"></span></p>
