@@ -1,13 +1,11 @@
 //bussiness logic
-function Orderpizza(pizza, type, cheese, ham, artichoke) {
+function Orderpizza(pizza, type, toppin) {
   this.pizza = pizza;
   this.type = type
-  this.cheese = cheese;
-  this.ham = ham;
-  this.artichoke = artichoke;
+  this.toppin = toppin;
 };
 
-Orderpizza.prototype.Pizza = function () {
+Orderpizza.prototype.pizza = function () {
   if (this.pizza === "largePizza") {
     return 15;
   } else if (this.pizza === "midPizza") {
@@ -17,7 +15,7 @@ Orderpizza.prototype.Pizza = function () {
   };
 };
 
-Orderpizza.prototype.Type = function () {
+Orderpizza.prototype.type = function () {
   if (this.type === "organicPizza"){
     return 5;
   } else {
@@ -25,27 +23,11 @@ Orderpizza.prototype.Type = function () {
   };
 };
 
-Orderpizza.prototype.Cheese = function () {
-  if (this.cheese === "cheese") {
+Orderpizza.prototype.Toppin = function () {
+  if (this.toppin === "cheese") {
     return 1
   };
 };
-
-Orderpizza.prototype.Ham = function () {
-  if (this.cheese === "ham") {
-    return 2
-  };
-};
-
-Orderpizza.prototype.Artichoke = function () {
-  if (this.cheese === "artichoke") {
-    return 3
-  };
-};
-
-
-
-
 
 
 //user-interface logic
@@ -54,14 +36,12 @@ $(document).ready(function() {
     event.preventDefault();
     var pickPizza = $("#sizePizza").val();
     var pickType = $("#typePizza").val();
-    var pickCheese = $("#cheese").val();
-    var pickHam = $("#ham").val();
-    var pickArtichoke = $("#artichoke").val();
-    var newPizza = new Orderpizza(pickPizza, pickType, pickCheese, pickHam, pickArtichoke);
+    var pickToppin = $("input:radio[name=toppings]:checked").val();
+    var newPizza = new Orderpizza(pickPizza, pickType, pickToppin);
 
     $("#showResults").show()
     $("#showPizza").text(newPizza.pizza);
-    $("#showIngre").text(newPizza.type, newPizza.cheese, newPizza.ham, newPizza.artichoke);
-    $("#showPrice").text();
+    $("#showIngre").text(newPizza.type);
+    $("#showToppin").text(newPizza.toppin);
   });
 });
