@@ -1,3 +1,11 @@
+//bussiness logic
+function Orderpizza(pizza, ingredients, price) {
+  this.pizza = pizza;
+  this.ingredients = ingredients;
+  this.price = price;
+
+}
+//user-interface logic
 $(document).ready(function() {
   $("form#pizzaForm").submit(function(event){
     event.preventDefault();
