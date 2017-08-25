@@ -14,7 +14,6 @@ Orderpizza.prototype.Pizza = function () {
     return 10;
   } else {
     return 7;
-    console.log(Pizza);
   };
 };
 
@@ -47,15 +46,22 @@ Orderpizza.prototype.Artichoke = function () {
 
 
 
+
+
 //user-interface logic
 $(document).ready(function() {
   $("form#pizzaForm").submit(function(event){
     event.preventDefault();
-    var pickPizza = $("#sizePizza").val()
-    var pickType = $("#typePizza").val()
-    var pickCheese = $("#cheese").val()
-    var pickHam = $("#ham").val()
-    var pickArtichoke = $("#artichoke").val()
-    var newPizza = new Orderpizza(pickPizza, pickType, pickCheese, pickHam, pickArtichoke)
+    var pickPizza = $("#sizePizza").val();
+    var pickType = $("#typePizza").val();
+    var pickCheese = $("#cheese").val();
+    var pickHam = $("#ham").val();
+    var pickArtichoke = $("#artichoke").val();
+    var newPizza = new Orderpizza(pickPizza, pickType, pickCheese, pickHam, pickArtichoke);
+
+    $("#showResults").show()
+    $("#showPizza").text(newPizza.pizza);
+    $("#showIngre").text(newPizza.type, newPizza.cheese, newPizza.ham, newPizza.artichoke);
+    $("#showPrice").text();
   });
 });
