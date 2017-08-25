@@ -1,11 +1,10 @@
 //bussiness logic
-function Orderpizza(pizza, cheese, ham, artichoke, meats) {
+function Orderpizza(pizza, type, cheese, ham, artichoke) {
   this.pizza = pizza;
   this.type = type
   this.cheese = cheese;
   this.ham = ham;
   this.artichoke = artichoke;
-  this.meats = meats;
 };
 
 Orderpizza.prototype.Pizza = function () {
@@ -15,6 +14,7 @@ Orderpizza.prototype.Pizza = function () {
     return 10;
   } else {
     return 7;
+    console.log(Pizza);
   };
 };
 
@@ -23,9 +23,28 @@ Orderpizza.prototype.Type = function () {
     return 5;
   } else {
     return 0;
-  }
-
+  };
 };
+
+Orderpizza.prototype.Cheese = function () {
+  if (this.cheese === "cheese") {
+    return 1
+  };
+};
+
+Orderpizza.prototype.Ham = function () {
+  if (this.cheese === "ham") {
+    return 2
+  };
+};
+
+Orderpizza.prototype.Artichoke = function () {
+  if (this.cheese === "artichoke") {
+    return 3
+  };
+};
+
+
 
 
 //user-interface logic
@@ -37,7 +56,6 @@ $(document).ready(function() {
     var pickCheese = $("#cheese").val()
     var pickHam = $("#ham").val()
     var pickArtichoke = $("#artichoke").val()
-    var pickMeats = $("#meats").val()
-    var newPizza = new Orderpizza(pickPizza, pickType, pickCheese, pickHam, pickArtichoke, pickMeats)
+    var newPizza = new Orderpizza(pickPizza, pickType, pickCheese, pickHam, pickArtichoke)
   });
 });
