@@ -34,6 +34,6 @@ img{
 }
 body{
   background-image: url("../images/pizza.jpg");
-  background-size: 130% auto;
+  background-size: auto;
   background-repeat: no-repeat;
 }
